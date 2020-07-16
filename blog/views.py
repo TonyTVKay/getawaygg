@@ -32,7 +32,7 @@ def contact(request):
             'Get Away Games MESSAGE', # subject
             fullmessage, # message
             settings.EMAIL_HOST_USER, # from email
-            ['TonyTVKay@gmail.com'], # To Email
+            ['Getawaygamesandmedia@gmail.com'], # To Email
             )
 
         return render(request, 'contact.html', {'message_name': message_name})

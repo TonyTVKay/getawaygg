@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{%  static 'css/elements.css' %}">
   <link rel="stylesheet" href="{%  static 'css/scary.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 
 </head>
 
@@ -101,11 +102,6 @@
     #page-container {
       position: relative;
       min-height: 100vh;
-    }
-
-    #content-wrap {
-      padding-bottom: 2.5rem;
-      /* Footer height */
     }
 
     #footer {
@@ -263,11 +259,11 @@
     }
   </style>
   <div id="page-container">
-    <div id="content-wrap">
+    <div>
       <nav class="navbar is-black  width:100%;top: 0;overflow: hidden;"></nav>
       <!-- Navigation -->
       <nav class="navbar is-black" role="navigation" aria-label="main navigation"
-        style="padding-left: .75%; position: fixed; width:100%;top: 0;">
+        style="padding-left: .75%; padding-right:.75%; position: fixed; width:100%;top: 0;">
         <div class="navbar-brand">
           <a class="navbar-item" href="{% url 'home' %}" style="color:#ffae00;">
             <img src="{%  static 'images/panko.png' %}" style="padding-right:20px;" />
@@ -323,12 +319,12 @@
 
         <div>
           <i class="fa fa-phone"></i>
-          <p>PHONE NUMBER</p>
+          <p>	(408) 475-6558</p>
         </div>
 
         <div>
           <i class="fa fa-envelope"></i>
-          <p><a href="mailto:support@company.com">getawaygg@gmail.com</a></p>
+          <p><a href="mailto:support@company.com">Getawaygamesandmedia@gmail.com</a></p>
         </div>
 
       </div>
