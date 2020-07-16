@@ -15,7 +15,7 @@
         <!-- Blog Entries Column -->
         <div class="columns is-mobile is-multiline" style="align-items: center;">
           {% for post in post_list %}
-          <div class="column post" style="min-width: 500px;">
+          <div class="column is-6 post" style="min-width: 350px;">
             <div style="text-align: center;">
               <a class="field" style="font-family: Roboto, sans-serif; font-size: 25px; color:#ffae00;"
                 href="{% url 'post_detail' post.slug  %}">{{ post.title }}</a>
