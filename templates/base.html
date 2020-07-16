@@ -1,0 +1,194 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Get Away Games</title>
+
+
+  <link rel="stylesheet" href="{%  static 'css/bulma.css' %}">
+  <link rel="stylesheet" href="{%  static 'css/elements.css' %}">
+  <link rel="stylesheet" href="{%  static 'css/scary.css' %}">
+
+</head>
+
+<body>
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+      font-size: 22px;
+      background-color:rgb(54,54,54);
+    }
+
+    .shadow {
+      box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-danger {
+      color: #fff;
+      background-color: #f00000;
+      border-color: #dc281e;
+    }
+
+    .masthead {
+      background: #000000;
+      height: auto;
+      padding-bottom: 15px;
+      /*box-shadow: 0 16px 48px #E3E7EB;*/
+      padding-top: 10px;
+    }
+
+    .navtext {
+      color: #FFBD33
+    }
+
+    .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: gray;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+    }
+
+    a:hover {
+      background-color: gray;
+    }
+
+    .navbar-item:hover {
+      background-color: gray;
+    }
+
+    b:hover {
+      background-color: gray;
+    }
+
+    #page-container {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    #content-wrap {
+      padding-bottom: 2.5rem;
+      /* Footer height */
+    }
+
+    #footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 2.5rem;
+      background-color: rgb(54,54,54);
+      /* Footer height */
+    }
+  </style>
+  <div id="page-container">
+    <div id="content-wrap">
+      <nav class="navbar is-black  width:100%;top: 0;overflow: hidden;"></nav>
+      <!-- Navigation -->
+      <nav class="navbar is-black" role="navigation" aria-label="main navigation"
+        style="padding-left: .75%; position: fixed; width:100%;top: 0;">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="{% url 'home' %}" style="color:#ffae00;">
+            <img src="{%  static 'images/panko.png' %}" style="padding-right:20px;" />
+            Get Away Games
+          </a>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            data-target="left-navbar"
+            onclick="this.classList.toggle('is-active');document.getElementById(this.dataset.target).classList.toggle('is-active');">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="left-navbar" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item" style="color:#ffae00;">
+              <div class="dropdown">
+                <a href="{% url 'games' %}" style="color:#ffae00;">Games</a>
+                <div class="dropdown-content" style="background-color: black;">
+                  {% for room in rooms %}
+                  <a style="color:#ffae00;" href="{% url 'post_detail' room.slug %}"> {{room.title}} </a>
+                  {%endfor%}
+                </div>
+              </div>
+            </div>
+            <div class="navbar-item"><a href="{% url 'contact' %}" style="color:#ffae00;">Contact</a></div>
+            <div class="navbar-item"><a href="{% url 'faq' %}" style="color:#ffae00;">FAQ</a></div>
+            <div class="navbar-item"><a href="{% url 'deals' %}" style="color:#ffae00;">Deals</a></div>
+            <div class="navbar-item"><a href="{% url 'home' %}" style="color:#ffae00;">BOOK NOW</a></div>
+            <div class="navbar-item">
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {% block content %}
+      <!-- Content Goes here -->
+      {% endblock content %}
+    </div>
+
+    <footer id="footer">
+      <div class="google-maps">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.562464469096!2d-121.8602918843529!3d37.329190545442046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e339bcda4c8ef%3A0xc6fa29c63933877d!2s750%20Story%20Rd%2C%20San%20Jose%2C%20CA%2095122!5e0!3m2!1sen!2sus!4v1594094906120!5m2!1sen!2sus"
+          width="100%" height="450px" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+      <!-- Footer -->
+      <div class="masthead" style="color:#ffae00;">
+        FOLLOW OUR SOCIAL MEDIA FEEDS ON FACEBOOK, TWITTER, AND INSTAGRAM!
+        <p class="text-dark text-center ">Copyright &copy; Get Away Games</p>
+        <div class="columns">
+          <a target="_blank" rel="noopener noreferrer"
+            href="https://www.facebook.com/Get-Away-Games-Media-100176344923839/" class="navbar-item"
+            style="color:#ffae00; height:100px;">
+            <img src="{%  static 'images/fb.png' %}" />
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/GetAwayGM" class="navbar-item"
+            style="color:#ffae00; max-height:100px;">
+            <img src="{%  static 'images/twitter.png' %}" />
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/get_away_gm" class="navbar-item"
+            style="color:#ffae00; max-height:100px;">
+            <img src="{%  static 'images/insta.png' %}" />
+          </a>
+        </div>
+      </div>
+
+    </footer>
+  </div>
+</body>
+
+</html>

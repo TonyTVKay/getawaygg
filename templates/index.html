@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="has-background-dark" style="text-align: center;">
+  <a style="font-family: Roboto, sans-serif; font-size: 30px; color:#ffae00;">Newest Game</a>
+</div>
+<section class="section has-background-grey" style="text-align: center;">
+  <div id="flash" class="video-container">
+    <video width="75%" height="75%" id="featured">
+      <source src="{% static 'videos/Three-Minute-Meal.mp4' %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+<section class="section has-background-dark" style="min-height:700px;">
+  <div class="columns">
+    <div class="column is-1"></div>
+    <div class="column is-10">
+      <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="columns is-mobile is-multiline" style="align-items: center;">
+          {% for post in post_list %}
+          <div class="column post" style="min-width: 500px;">
+            <div style="text-align: center;">
+              <a class="field" style="font-family: Roboto, sans-serif; font-size: 25px; color:#ffae00;"
+                href="{% url 'post_detail' post.slug  %}">{{ post.title }}</a>
+              <div class="hovereffect" style="margin-top:10px;margin-bottom:10px;">
+                <figure class="img-responsive">
+                  <a href="{% url 'post_detail' post.slug  %}"><img src="{%  static post.image_path %}" /></a>
+                </figure>
+              </div>
+              <div style="padding:10px;">
+                <a onclick="openFullscreen('{{post.slug}}');" class="button" style="background-color:orange">Trailer</a>
+                <a href="{% url 'post_detail' post.slug  %}" class="button" style="background-color:orange">Book Now</a>
+              </div>
+              <video width="1" height="1" controls='true' id='{{ post.slug }}'>
+                <source src="{% static post.video_path %}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="column is-1"></div>
+  </div>
+</section>
+<script>
+  function openFullscreen(vidId) {
+    var elem = document.getElementById(vidId);
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      elem.msRequestFullscreen();
+    }
+    elem.style.height = '100%';
+    elem.style.width = '100%';
+    elem.play();
+  }
+</script>
+{%endblock%}

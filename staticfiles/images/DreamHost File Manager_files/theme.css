@@ -1,0 +1,148 @@
+/*
+Use our theme wizard to easily rebrand with your own colors and logo
+http://redirect.monstaftp.com/theme-wizard
+
+Rebranding is only available in the Enterprise Edition
+http://redirect.monstaftp.com/upgrade
+*/
+
+.toolbar {
+  background-color: #071C26;
+}
+
+.toolbar button {
+  background-color: #071C26;
+  border-bottom-color: #071C26;
+}
+
+.toolbar button.inactive {
+  color: #c0c0c0;
+}
+
+.toolbar button.active {
+  color: #ffffff;
+}
+
+#slidebar {
+  background-color: #071C26;
+}
+
+#slidebar i {
+  border-bottom-color: #071C26;
+}
+
+#slidebar a {
+  color: #ffffff;
+}
+
+#modal-editor .file-path {
+  border-color: #071C26;
+}
+
+#modal-editor .modal-footer {
+  background-color: #071C26;
+  color: #ffffff;
+}
+
+.toolbar button.active:hover {
+  background-color: #2e2e2e;
+  border-bottom-color: #0073EC;
+}
+
+#slidebar i:hover {
+  background-color: #2e2e2e;
+  border-bottom-color: #0073EC;
+}
+
+#history .dropdown-menu {
+  background-color: #fffff3;
+  border-left-color: #0073EC;
+}
+
+#history button {
+  background-color: #0073EC;
+  color: #ffffff;
+}
+
+#history ul li:hover {
+  background-color: #fafaec;
+}
+
+#breadcrumb {
+  background-color: #fffff3;
+}
+
+#modal-editor .file-path {
+  background-color: #fffff3;
+}
+
+#files .ui-selecting, #files .ui-selected {
+  background-color: #feffe4;
+}
+
+#files .ui-selecting:first-child, #files .ui-selected:first-child {
+  border-top-color: #feffe4;
+}
+
+#files td.icon .fa-folder, #files td.icon .fa-level-up {
+  color: #0073EC;
+}
+
+#files td.icon i {
+  color: #5590bc;
+}
+
+#modal-transfers .icon i {
+  color: #5590bc;
+}
+
+.dropdown-menu li a:hover, .dropdown-menu .active a:hover {
+  background-color: #4094fa;
+}
+
+.toolbar .logo {
+  background: url('/application/frontend/images/dh_logo-white.png') no-repeat center center;
+  background-size: 150px 22px;
+  height: 22px;
+  width: 150px;
+}
+
+@media (max-width:1000px) {
+  .toolbar .logo {
+    background: url('/application/frontend/images/dh_logomark-white.png') no-repeat center center;
+    background-size: 35px 35px;
+    background-position: 0;
+    width: 35px;
+  }
+}
+
+#modal-editor .modal-footer .logo {
+  background: url('/application/frontend/images/dh_logo-white.png') no-repeat center center;
+  background-size: 100px 17px;
+  height: 23px;
+  width: 100px;
+}
+
+@media (max-width:1000px) {
+  #modal-editor .modal-footer .logo {
+    background: url('/application/frontend/images/dh_logomark-white.png') no-repeat center center;
+    background-size: 23px 23px;
+    background-position: 0;
+    width: 23px;
+  }
+}
+
+.label-warning {
+  background-color: #0073EC;
+  color: #ffffff;
+  
+}
+
+.btn-primary {
+  background-color: #337ab7;
+  color: #ffffff;
+}
+
+#breadcrumb #breadcrumb__home_link {
+  display: none;
+}
