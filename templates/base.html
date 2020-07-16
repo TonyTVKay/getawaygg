@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{%  static 'css/bulma.css' %}">
   <link rel="stylesheet" href="{%  static 'css/elements.css' %}">
   <link rel="stylesheet" href="{%  static 'css/scary.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -17,7 +18,7 @@
     body {
       font-family: "Roboto", sans-serif;
       font-size: 22px;
-      background-color:rgb(54,54,54);
+      background-color: rgb(54, 54, 54);
     }
 
     .shadow {
@@ -110,8 +111,155 @@
       bottom: 0;
       width: 100%;
       height: 2.5rem;
-      background-color: rgb(54,54,54);
+      background-color: rgb(54, 54, 54);
       /* Footer height */
+    }
+
+    .footer-distributed {
+      background-color: #292c2f;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: bold 16px sans-serif;
+
+      padding: 55px 50px;
+      margin-top: 80px;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    /* Footer left */
+
+    .footer-distributed .footer-left {
+      width: 40%;
+    }
+
+    /* The company logo */
+
+    .footer-distributed h3 {
+      color: #ffffff;
+      font: normal 36px 'Cookie', cursive;
+      margin: 0;
+    }
+
+    .footer-distributed h3 span {
+      color: #5383d3;
+    }
+
+    /* Footer links */
+
+    .footer-distributed .footer-links {
+      color: #ffffff;
+      margin: 20px 0 12px;
+      padding: 0;
+    }
+
+    .footer-distributed .footer-links a {
+      display: inline-block;
+      line-height: 1.8;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .footer-distributed .footer-company-name {
+      color: #8f9296;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    /* Footer Center */
+
+    .footer-distributed .footer-center {
+      width: 35%;
+    }
+
+    .footer-distributed .footer-center i {
+      background-color: #33383b;
+      color: #ffffff;
+      font-size: 25px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+    }
+
+    .footer-distributed .footer-center i.fa-envelope {
+      font-size: 17px;
+      line-height: 38px;
+    }
+
+    .footer-distributed .footer-center p {
+      display: inline-block;
+      color: #ffffff;
+      vertical-align: middle;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-center p span {
+      display: block;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .footer-distributed .footer-center p a {
+      color: #5383d3;
+      text-decoration: none;
+      ;
+    }
+
+
+    /* Footer Right */
+
+    .footer-distributed .footer-right {
+      width: 20%;
+    }
+
+    .footer-distributed .footer-company-about {
+      line-height: 20px;
+      color: #92999f;
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-company-about span {
+      display: block;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .footer-distributed .footer-icons {
+      margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      background-color: #33383b;
+      border-radius: 2px;
+
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+
+      margin-right: 3px;
+      margin-bottom: 5px;
     }
   </style>
   <div id="page-container">
@@ -160,31 +308,48 @@
       {% endblock content %}
     </div>
 
-    <footer id="footer">
+    <footer class="footer-distributed">
       <div class="google-maps">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.562464469096!2d-121.8602918843529!3d37.329190545442046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e339bcda4c8ef%3A0xc6fa29c63933877d!2s750%20Story%20Rd%2C%20San%20Jose%2C%20CA%2095122!5e0!3m2!1sen!2sus!4v1594094906120!5m2!1sen!2sus"
           width="100%" height="450px" style="border:0;" allowfullscreen=""></iframe>
       </div>
-      <!-- Footer -->
-      <div class="masthead" style="color:#ffae00;">
-        FOLLOW OUR SOCIAL MEDIA FEEDS ON FACEBOOK, TWITTER, AND INSTAGRAM!
-        <p class="text-dark text-center ">Copyright &copy; Get Away Games</p>
-        <div class="columns">
-          <a target="_blank" rel="noopener noreferrer"
-            href="https://www.facebook.com/Get-Away-Games-Media-100176344923839/" class="navbar-item"
-            style="color:#ffae00; height:100px;">
-            <img src="{%  static 'images/fb.png' %}" />
-          </a>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/GetAwayGM" class="navbar-item"
-            style="color:#ffae00; max-height:100px;">
-            <img src="{%  static 'images/twitter.png' %}" />
-          </a>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/get_away_gm" class="navbar-item"
-            style="color:#ffae00; max-height:100px;">
-            <img src="{%  static 'images/insta.png' %}" />
-          </a>
+      <br>
+      <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>750 Story Rd.</span> San Jose, CA</p>
         </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>PHONE NUMBER</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">getawaygg@gmail.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>FOLLOW OUR SOCIAL MEDIA FEEDS ON FACEBOOK, TWITTER, AND INSTAGRAM!</span>
+          Copyright &copy; Get Away Games
+        </p>
+
+        <div class="footer-icons">
+
+          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/Get-Away-Games-Media-100176344923839/"><i
+              class="fa fa-facebook"></i></a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/GetAwayGM"><i class="fa fa-twitter"></i></a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/get_away_gm"><i class="fa fa-instagram"></i></a>
+
+        </div>
+
       </div>
 
     </footer>
