@@ -19,8 +19,8 @@
 <body>
   <style>
     body {
-      font-family: "Roboto", sans-serif;
-      font-size: 22px;
+      font-family: 'Denk One', sans-serif;
+      font-size: 24px;
       background-color: rgb(54, 54, 54);
     }
 
@@ -69,7 +69,7 @@
     }
 
     .dropdown-content a {
-      color: black;
+      color:hsl(0, 0%, 7%);
       padding: 12px 16px;
       text-decoration: none;
       display: block;
@@ -260,12 +260,12 @@
   </style>
   <div id="page-container">
     <div>
-      <nav class="navbar is-black  width:100%;top: 0;overflow: hidden;"></nav>
+      <nav class="navbar has-background-black-bis  width:100%;top: 0;overflow: hidden;"></nav>
       <!-- Navigation -->
-      <nav class="navbar is-black" role="navigation" aria-label="main navigation"
+      <nav class="navbar has-background-black-bis" role="navigation" aria-label="main navigation"
         style="padding-left: .75%; padding-right:.75%; position: fixed; width:100%;top: 0;">
         <div class="navbar-brand">
-          <a class="navbar-item" href="{% url 'home' %}" style="color:#ffae00;">
+          <a class="navbar-item" href="{% url 'home' %}" style="color: white;">
             <img src="{%  static 'images/panko.png' %}" style="padding-right:20px;" />
             Get Away Games
           </a>
@@ -279,75 +279,83 @@
         </div>
         <div id="left-navbar" class="navbar-menu">
           <div class="navbar-end">
-            <div class="navbar-item" style="color:#ffae00;">
+            <div class="navbar-item" style="color: white;">
               <div class="dropdown">
-                <a href="{% url 'games' %}" style="color:#ffae00;">Games</a>
-                <div class="dropdown-content" style="background-color: black;">
+                <a href="{% url 'games' %}" style="color: white;">Games</a>
+                <div class="dropdown-content" style="background-color: hsl(0, 0%, 7%)">
                   {% for room in rooms %}
-                  <a style="color:#ffae00;" href="{% url 'post_detail' room.slug %}"> {{room.title}} </a>
+                  <a style="color: white;" href="{% url 'post_detail' room.slug %}"> {{room.title}} </a>
                   {%endfor%}
                 </div>
               </div>
             </div>
-            <div class="navbar-item"><a href="{% url 'contact' %}" style="color:#ffae00;">Contact</a></div>
-            <div class="navbar-item"><a href="{% url 'faq' %}" style="color:#ffae00;">FAQ</a></div>
-            <div class="navbar-item"><a href="{% url 'deals' %}" style="color:#ffae00;">Deals</a></div>
-            <div class="navbar-item"><a href="{% url 'home' %}" style="color:#ffae00;">BOOK NOW</a></div>
-            </div>
+            <div class="navbar-item"><a href="{% url 'contact' %}" style="color: white;">Contact</a></div>
+            <div class="navbar-item"><a href="{% url 'faq' %}" style="color: white;">FAQ</a></div>
+            <div class="navbar-item"><a href="{% url 'deals' %}" style="color: white;">About Us</a></div>
+            <div class="navbar-item"><a href="{% url 'home' %}" style="color: white;">BOOK NOW</a></div>
           </div>
         </div>
-      </nav>
+    </div>
+    </nav>
 
-      {% block content %}
-      <!-- Content Goes here -->
-      {% endblock content %}
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
+  </div>
+
+  <footer class="footer-distributed">
+    <br>
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>750 Story Rd.</span> San Jose, CA</p>
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.562464469096!2d-121.8602918843529!3d37.329190545442046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e339bcda4c8ef%3A0xc6fa29c63933877d!2s750%20Story%20Rd%2C%20San%20Jose%2C%20CA%2095122!5e0!3m2!1sen!2sus!4v1594094906120!5m2!1sen!2sus"
+        width="80%" height="450px" style="border:0; padding-left:5%" allowfullscreen=""></iframe>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p> (408) 475-6558</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@company.com">Getawaygamesandmedia@gmail.com</a></p>
+      </div>
+
+    </div>
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>19 N 2nd St.</span> San Jose, CA</p>
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.235752997565!2d-121.89217398469496!3d37.336926979841614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fccbd2a22d567%3A0x9905fab1a6fa96b7!2s19%20N%202nd%20St%2C%20San%20Jose%2C%20CA%2095113!5e0!3m2!1sen!2sus!4v1594944694179!5m2!1sen!2sus"
+        width="80%" height="450px" style="border:0; padding-left:5%;" allowfullscreen=""></iframe>
+      </div>
+    </div>
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>FOLLOW OUR SOCIAL MEDIA FEEDS ON FACEBOOK, TWITTER, AND INSTAGRAM!</span>
+        Copyright &copy; Get Away Games
+      </p>
+
+      <div class="footer-icons">
+
+        <a target="_blank" rel="noopener noreferrer"
+          href="https://www.facebook.com/Get-Away-Games-Media-100176344923839/"><i class="fa fa-facebook"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/GetAwayGM"><i
+            class="fa fa-twitter"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/getaway_gm"><i
+            class="fa fa-instagram"></i></a>
+
+      </div>
+
     </div>
 
-    <footer class="footer-distributed">
-      <div class="google-maps">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.562464469096!2d-121.8602918843529!3d37.329190545442046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e339bcda4c8ef%3A0xc6fa29c63933877d!2s750%20Story%20Rd%2C%20San%20Jose%2C%20CA%2095122!5e0!3m2!1sen!2sus!4v1594094906120!5m2!1sen!2sus"
-          width="100%" height="450px" style="border:0;" allowfullscreen=""></iframe>
-      </div>
-      <br>
-      <div class="footer-center">
-
-        <div>
-          <i class="fa fa-map-marker"></i>
-          <p><span>750 Story Rd.</span> San Jose, CA</p>
-        </div>
-
-        <div>
-          <i class="fa fa-phone"></i>
-          <p>	(408) 475-6558</p>
-        </div>
-
-        <div>
-          <i class="fa fa-envelope"></i>
-          <p><a href="mailto:support@company.com">Getawaygamesandmedia@gmail.com</a></p>
-        </div>
-
-      </div>
-      <div class="footer-center"></div>
-      <div class="footer-right">
-
-        <p class="footer-company-about">
-          <span>FOLLOW OUR SOCIAL MEDIA FEEDS ON FACEBOOK, TWITTER, AND INSTAGRAM!</span>
-          Copyright &copy; Get Away Games
-        </p>
-
-        <div class="footer-icons">
-
-          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/Get-Away-Games-Media-100176344923839/"><i
-              class="fa fa-facebook"></i></a>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/GetAwayGM"><i class="fa fa-twitter"></i></a>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/get_away_gm"><i class="fa fa-instagram"></i></a>
-
-        </div>
-
-      </div>
-
-    </footer>
+  </footer>
   </div>
 </body>
 

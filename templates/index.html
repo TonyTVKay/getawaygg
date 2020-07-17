@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="has-background-dark" style="text-align: center;">
-  <a style="font-family: Roboto, sans-serif; font-size: 30px; color:#ffae00;">Newest Game</a>
+  <a style="font-family: 'Denk One', sans-serif; font-size: 30px; color:#ffae00;">Newest Game</a>
 </div>
 <section class="section has-background-grey" style="text-align: center;">
   <div id="flash" class="video-container">
@@ -25,16 +25,16 @@
           {% for post in post_list %}
           <div class="column is-6 post" style="min-width: 350px;">
             <div style="text-align: center;">
-              <a class="field" style="font-family: Roboto, sans-serif; font-size: 25px; color:#ffae00;"
+              <a class="field" style="font-family: 'Denk One', sans-serif; font-size: 45px; color:white;"
                 href="{% url 'post_detail' post.slug  %}">{{ post.title }}</a>
               <div class="hovereffect" style="margin-top:10px;margin-bottom:10px;">
                 <figure class="img-responsive">
                   <a href="{% url 'post_detail' post.slug  %}"><img src="{%  static post.image_path %}" /></a>
                 </figure>
               </div>
-              <div style="padding:10px;">
-                <a onclick="openFullscreen('{{post.slug}}');" class="button" style="background-color:orange">Trailer</a>
-                <a href="{% url 'post_detail' post.slug  %}" class="button" style="background-color:orange">Book Now</a>
+              <div>
+                <a onclick="openFullscreen('{{post.slug}}');" class="button is-large" style="background-color:#ffae00; border-color: orange; margin-right:5%;">Trailer</a>
+                <a href="{% url 'post_detail' post.slug  %}" class="button is-large" style="background-color:#ffae00; border-color: orange; margin-left:5%;">Book Now</a>
               </div>
               <video width="1" height="1" controls='true' id='{{ post.slug }}'>
                 <source src="{% static post.video_path %}" type="video/mp4">

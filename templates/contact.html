@@ -2,14 +2,6 @@
 {% load static %}
 {% block content %}
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        outline: none;
-        font-family: 'Roboto', sans-serif;
-    }
-
     body {
         background: url("{% static 'images/notes.jpg' %}") no-repeat top center;
         background-size: cover;
@@ -20,8 +12,8 @@
         top: 50%;
         left: 50%;
         width: 100%;
-        max-width: 75%;
-        background: rgba(255, 187, 39, 0.8);
+        max-width: 60%;
+        background: rgba(209, 209, 209, 0.8);
         padding: 30px;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -41,27 +33,27 @@
     .input-fields {
         display: flex;
         flex-direction: column;
-        margin-right: 4%;
+        margin-right: 0%;
     }
 
     .input-fields,
     .msg {
-        width: 48%;
+        width: 100%;
     }
 
     .input-fields .input,
     .msg textarea {
         margin: 10px 0;
-        background: transparent;
         border: 0px;
         border-bottom: 2px solid #ffffff;
         padding: 10px;
         color: #000000;
         width: 100%;
+        background: rgba(255, 255, 255, 0.8);
     }
 
     .msg textarea {
-        height: 200px;
+        height: 300px;
     }
 
     ::-webkit-input-placeholder {
@@ -119,7 +111,7 @@
 <br /><br /><br />
 {% else %}
 
-<body> 
+<body>
     <br>
     <br>
     <div class=wrapper>
@@ -128,15 +120,18 @@
             <div class="contact-form">
                 <div class="input-fields">
                     <div>
-                        <input type="text" name="message-name" class="form-control input" placeholder="Your Name" required>
+                        <input type="text" name="message-name" class="form-control input" placeholder="Your Name"
+                            required>
                     </div>
                     <div>
-                        <input type="email" name="message-email" class="form-control input" placeholder="Your Email" required>
+                        <input type="email" name="message-email" class="form-control input" placeholder="Your Email"
+                            required>
                     </div>
-                </div>
-                <div class="msg">
-                    <textarea name="message" class="form-control input textarea" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="button">Send</button>
+                    <div class="msg" style="text-align: right;">
+                        <textarea name="message" class="form-control input textarea" placeholder="Your Message"
+                            required></textarea>
+                        <button type="submit" class="button is-medium" style="background:#ffae00; border-color:orange;">Send</button>
+                    </div>
                 </div>
             </div>
         </form>

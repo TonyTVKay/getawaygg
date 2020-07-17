@@ -32,7 +32,7 @@
   position: relative;
   text-align: center;
   cursor: default;
-  background: #b04242;
+  background: #c08402;
 }
 
 .hovereffect .overlay {
@@ -59,7 +59,7 @@
 }
 
 .hovereffect:hover img {
-  opacity: 0.4;
+  opacity: 0.6;
   filter: alpha(opacity=40);
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
