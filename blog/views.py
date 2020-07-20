@@ -1,5 +1,5 @@
 from django.views import generic
-from .models import Post, Faq
+from .models import Post, Faq, Game
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
@@ -9,7 +9,7 @@ class FaqList(generic.ListView):
     template_name = 'faq.html'
 
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    queryset = Game.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
 
 class PostDetail(generic.DetailView):
@@ -18,6 +18,10 @@ class PostDetail(generic.DetailView):
 
 class PostPage(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'rooms.html'
+
+class GamePage(generic.ListView):
+    queryset = Game.objects.filter(status=1).order_by('-created_on')
     template_name = 'games.html'
 
 def contact(request):
