@@ -2,9 +2,8 @@
 {% load static %}
 {% block content %}
 <section
-  style="text-align: center; background: url('{% static 'images/stairs.jpg' %}') 50% 30%; background-size: cover; height: 200px;">
-  <br>
-  <h4>Escape Rooms</h4>
+  style="text-align: center; background: url('{% static 'images/stairs.jpg' %}') 50% 30%; background-size: cover; height: 30%; vertical-align: middle;">
+  <br><h4>Escape Rooms</h4><br>
 </section>
 <section class="section has-background-dark" style="min-height:700px;">
   <div class="columns">
@@ -17,7 +16,7 @@
           {% for post in post_list %}
           <div class="column is-6 post" style="min-width: 350px;">
             <div style="text-align: center;">
-              <a class="field" style="font-family: 'Denk One', sans-serif; font-size: 45px; color:white;"
+              <a class="field" style="font-family: 'Denk One', sans-serif; font-size: 40px; color:white;"
                 href="{% url 'post_detail' post.slug  %}">{{ post.title }}</a>
               <div class="hovereffect" style="margin-top:10px;margin-bottom:10px;">
                 <figure class="img-responsive">
