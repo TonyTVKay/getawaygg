@@ -42,3 +42,6 @@ def contact(request):
 
 def deals(request):
     return render(request, 'deals.html', {})
+
+def book(request):
+    return render(request, 'book-now.html', {})
