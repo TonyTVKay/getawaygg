@@ -10,4 +10,5 @@ urlpatterns = [
     path('faq', views.FaqList.as_view(), name = 'faq'),
     path('deals', views.deals, name = 'deals'),
     path('book-now', views.book, name = 'book-now'),
+    path('about-us', views.about, name = 'about-us'),
 ] 

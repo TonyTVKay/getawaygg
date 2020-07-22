@@ -49,3 +49,6 @@ def deals(request):
 
 def book(request):
     return render(request, 'book-now.html', {})
+
+def about(request):
+    return render(request, 'about-us.html', {})
