@@ -23,7 +23,7 @@
         <!-- Blog Entries Column -->
         <div class="columns is-mobile is-multiline" style="align-items: center; justify-content: center;">
           {% for post in rooms %}
-          <div class="column is-6 post" style="min-width: 500px;">
+          <div class="column post" style="min-width: 400px;">
             <div style="text-align: center;">
               <a class="field" style="font-family: 'Denk One', sans-serif; font-size: 45px; color:white;"
                 href="{% url 'post_detail' post.slug  %}">{{ post.title }}</a>
@@ -62,7 +62,7 @@ style="text-align: center; background: url('{% static 'images/videogames.png' %}
         <!-- Blog Entries Column -->
         <div class="columns is-mobile is-multiline" style="align-items: center; justify-content: center;">
           {% for game in game_list %}
-          <div class="column is-6 game" style="min-width: 500px;">
+          <div class="column game" style="min-width: 400px;">
             <div style="text-align: center;">
               <a class="field" style="font-family: 'Denk One', sans-serif; font-size: 45px; color:white;">{{ game.title }}</a>
               <div class="hovereffect" style="margin-top:10px;margin-bottom:10px;">
