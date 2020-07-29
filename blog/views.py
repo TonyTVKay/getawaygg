@@ -24,6 +24,10 @@ class GamePage(generic.ListView):
     queryset = Game.objects.filter(status=1).order_by('-created_on')
     template_name = 'games.html'
 
+class GameDetail(generic.DetailView):
+    model = Game
+    template_name = 'game_detail.html'
+
 def contact(request):
     if request.method == "POST":
         message_name = request.POST['message-name']
