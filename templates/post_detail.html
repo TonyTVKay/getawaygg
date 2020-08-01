@@ -129,34 +129,32 @@
         <!-- Indicators -->
 
         <!-- Wrapper for slides -->
+        
         <div class="carousel-inner" role="listbox">
+          {% if object.trailer1 != "none" %}
           <div class="item active">
             <div class="inner-content vid-inner-content">
-              <div id="vid-0" data-id="83apjSbVV-o" class="youtube-video"></div>
+              <div id="vid-0" data-id={{object.trailer1}} class="youtube-video"></div>
             </div>
           </div>
+          {% endif %}
+          {% if object.trailer2 != "none" %}
           <div class="item">
             <div class="inner-content vid-inner-content">
-              <div id="vid-1" data-id="83apjSbVV-o" class="youtube-video"></div>
+              <div id="vid-1" data-id={{object.trailer2}} class="youtube-video"></div>
             </div>
           </div>
+          {% endif %}
+          {% if object.trailer3 != "none" %}
           <div class="item">
             <div class="inner-content vid-inner-content">
-              <div id="vid-2" data-id="83apjSbVV-o" class="youtube-video"></div>
+              <div id="vid-2" data-id="{{object.trailer3}}" class="youtube-video"></div>
             </div>
           </div>
-          <div class="item">
-            <div class="inner-content vid-inner-content">
-              <div id="vid-3" data-id="83apjSbVV-o" class="youtube-video"></div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="inner-content vid-inner-content">
-              <div id="vid-4" data-id="83apjSbVV-o" class="youtube-video"></div>
-            </div>
-          </div>
+          {% endif %}
         </div>
         <!-- Controls -->
+        {% if object.trailer1 != "none" %}
         <a class="left carousel-control vid-carousel-control" href="#video-carousel" role="button" data-slide="prev">
           <span class="glyphicon fa fa-chevron-left fa-3x" aria-hidden="true"></span> <span
             class="sr-only">Previous</span>
@@ -164,6 +162,7 @@
         <a class="right carousel-control vid-carousel-control" href="#video-carousel" role="button" data-slide="next">
           <span class="glyphicon fa fa-chevron-right fa-3x" aria-hidden="true"></span> <span class="sr-only">Next</span>
         </a>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -178,6 +177,12 @@
         <img src="{%  static 'images/panko-rating.png' %}" style="width:50px;" />
         {% endfor %}
         {% endwith %}
+        {% with ''|center:object.difficultyLeft as range %}
+        {% for _ in range %}
+        <img src="{%  static 'images/panko-rating-clear.png' %}" style="width:50px;" />
+        {% endfor %}
+        {% endwith %}
+        
         <br>
         <br>
       <div style="text-align: center;">
