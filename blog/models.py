@@ -19,6 +19,10 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     difficulty = models.PositiveIntegerField(default=3, validators=[MinValueValidator(1), MaxValueValidator(5)])
+    difficultyLeft = models.PositiveIntegerField(default=2, validators=[MinValueValidator(1), MaxValueValidator(5)])
+    trailer1 = models.CharField(default="none", max_length=200)
+    trailer2 = models.CharField(default="none", max_length=200)
+    trailer3 = models.CharField(default="none", max_length=200)
 
     class Meta:
         ordering = ['-created_on']
