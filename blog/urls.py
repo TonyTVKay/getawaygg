@@ -10,6 +10,7 @@ urlpatterns = [
     path('contact', views.contact, name="contact"),
     path('faq', views.FaqList.as_view(), name = 'faq'),
     path('deals', views.deals, name = 'deals'),
-    path('book-now', views.book, name = 'book-now'),
+    path('book-now', views.error, name = 'book-now'),
     path('about-us', views.about, name = 'about-us'),
+    path('404', views.error, name = '404'),
 ] 

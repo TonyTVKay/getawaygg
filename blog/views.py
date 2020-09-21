@@ -56,3 +56,6 @@ def book(request):
 
 def about(request):
     return render(request, 'about-us.html', {})
+
+def error(request):
+    return render(request, '404.html', {})
