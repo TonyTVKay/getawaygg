@@ -21,6 +21,84 @@
     left: 20%;
     top: 10%;
   }
+
+  .promo-banner, .promo-banner * { 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .promo-banner {
+    background: #ffae00;
+    padding: 1rem;
+    font-size: 1.4rem;
+  }
+  .promo-banner-content {
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+  .promo-banner-content p {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+  }
+  .promo-banner-content p b {
+    background: #000;
+    color: #fff;
+    font-weight: 600;
+    padding: .2rem .5rem;
+    line-height: 1.6;
+  }
+  .promo-banner-content .lead {
+    font-family: Shadows Into Light;
+    font-size: 2.5rem;
+    display: flex;
+    margin-right: 2rem;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .promo-banner-btn {
+    margin-left: 2rem;
+    
+  }
+  .promo-banner-btn button{
+    background: #fff;
+    border: 3px #000 solid;
+    padding: .8rem 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+  
+  }
+  .promo-banner-btn button:hover {
+    border-color: green; 
+  }
+  .promo-banner-btn button .txt {
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .promo-banner-content sup {
+    line-height: 0;
+    position: relative;
+    font-size: 60%;
+    vertical-align: bottom;
+    top: -2rem;
+  }
+  
+  @media (max-width: 730px) {
+    .promo-banner-content p {
+      flex-direction: column;
+      text-align: center;
+    }
+    .promo-banner-content .lead {
+      margin-right: 0;
+    }    
+  }
+  
 </style>
 <!--<section class="section has-background-grey" style="text-align: center;">
   <div id="flash" class="video-container">
@@ -30,6 +108,12 @@
     </video>
   </div>
 </section>-->
+<div class="promo-banner">
+  <div class="promo-banner-content">
+    <p>DISCOUNT: 15% off Purchase! Expires: 10/31</p>
+    <div class="promo-banner-btn"><button onclick="copyCode()"><span class="txt">Click to Copy Promo Code: </span><div id="promocode">HaloweenOpening15</div></button></div>
+ </div>
+</div>
 <div
   style="text-align: center; background: url('{% static 'images/rooms.jpg' %}') 50% 47%; background-size: cover; height: 320px;">
 </div>
@@ -139,6 +223,17 @@
       }
     });
   });
+
+  function copyCode() {
+    var copyText = document.getElementById("promocode");
+    var textArea = document.createElement("textarea");
+    textArea.value = copyText.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    textArea.remove();
+    alert("Copied the Promo Code to Clipboard!");
+  }
 
 
 
